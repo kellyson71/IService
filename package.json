@@ -1,0 +1,45 @@
+{
+  "name": "iservice",
+  "version": "0.1.0",
+  "description": "Plataforma que conecta clientes a prestadores de serviços",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Iservice/Iservice.git"
+  },
+  "keywords": [
+    "serviços",
+    "agendamento",
+    "prestadores",
+    "plataforma",
+    "pagamentos"
+  ],
+  "author": "Equipe IService",
+  "contributors": [
+    "Matheus (Front-end)",
+    "Kellyson Raphael (Back-end)",
+    "Otávio Cândido (Back-end)",
+    "Kadson Kauã (Design)",
+    "Weslley (Design)",
+    "Kauan (Design)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Iservice/Iservice/issues"
+  },
+  "homepage": "https://github.com/Iservice/Iservice",
+  "private": true,
+  "dependencies": {
+    "connect": "~3.2.0",
+    "body-parser": "~1.8.3",
+    "serve-static": "~1.6.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
