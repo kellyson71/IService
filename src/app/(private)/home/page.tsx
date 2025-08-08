@@ -178,7 +178,7 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-3 items-center gap-4">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] items-center gap-4">
           {providers.map((e, _) => {
             return (
               <Card
