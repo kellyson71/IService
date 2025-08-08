@@ -51,7 +51,7 @@ export default function UserPage() {
         <h1>
           <a href="/home">iServices</a>
         </h1>
-        <div className="w-full mx-10 relative">
+        <div className="w-full mx-10 relative max-sm:hidden">
           <div className="absolute h-full flex items-center justify-center pl-2">
             <Search className="opacity-50" />
           </div>
@@ -65,9 +65,9 @@ export default function UserPage() {
           Perfil
         </Button>
       </header>
-      <main className="w-full flex-1 flex flex-col gap-4 p-8 px-32 overflow-y-scroll max-h-[90vh]">
+      <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-8 px-32 overflow-y-scroll max-h-[90vh]">
         <div className="bg-neutral-200 p-8 rounded-3xl">
-          <div className="grid grid-cols-3 items-center gap-4">
+          <div className="min-md:grid min-md:grid-cols-3 items-center gap-4">
             <Card className="w-full border-1 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center">
               <div className="w-full relative">
                 <div className="relative">
@@ -125,14 +125,14 @@ export default function UserPage() {
                 </div>
               </div>
             </Card>
-            <Card className="w-full h-full border-1 col-start-2 col-end-4 rounded-4xl border-accent shadow-sm flex flex-col p-16 items-center justify-center">
+            <Card className="max-sm:p-4 max-sm:mt-8 w-full h-full border-1 col-start-2 col-end-4 rounded-4xl border-accent shadow-sm flex flex-col p-16 items-center justify-center">
               <h1 className="text-lg font-bold text-left w-full">Sobre</h1>
               <p>{user.about}</p>
             </Card>
           </div>
         </div>
         <div className="bg-neutral-200 p-8 rounded-3xl">
-          <div className="grid grid-cols-3 items-center gap-4">
+          <div className="min-md:grid min-md:grid-cols-3 items-center gap-4">
             <Card className="w-full h-full relative border-1 gap-0 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center">
               <div className="absolute w-full flex items-center justify-center -top-3">
                 <h1 className="px-4 py-2 bg-background rounded-full">
@@ -171,7 +171,7 @@ export default function UserPage() {
                 </Badge>
               </div>
             </Card>
-            <Card className="w-full h-full border-1 col-start-2 col-end-4 rounded-4xl border-accent shadow-sm flex flex-col p-16 items-center justify-center">
+            <Card className="max-sm:p-2 w-full h-full border-1 col-start-2 col-end-4 rounded-4xl border-accent shadow-sm flex flex-col p-16 items-center justify-center">
               <div className="w-full flex flex-col">
                 {user.comments.map((comment, _) => (
                   <>

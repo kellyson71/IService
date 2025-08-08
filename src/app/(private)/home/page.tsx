@@ -123,7 +123,7 @@ export default function Home() {
         <h1>
           <a href="/home">iServices</a>
         </h1>
-        <div className="w-full mx-10 relative">
+        <div className="w-full mx-10 relative max-sm:hidden">
           <div className="absolute h-full flex items-center justify-center pl-2">
             <Search className="opacity-50" />
           </div>
@@ -137,14 +137,14 @@ export default function Home() {
           Perfil
         </Button>
       </header>
-      <main className="w-full flex-1 flex flex-col gap-4 p-16 px-32 overflow-y-scroll max-h-[90vh]">
+      <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-16 px-32 overflow-y-scroll max-h-[90vh]">
         <h1 className="font-bold text-3xl">Filtrar Prestadores</h1>
         <Separator className="mb-8" />
         <Input
           className="w-full py-4 bg-background rounded-full"
           placeholder="Buscar por nome ou cidade"
         />
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 max-sm:hidden">
           <div className="flex flex-row gap-2 items-center justify-center">
             <Star />
             <Input
@@ -183,7 +183,7 @@ export default function Home() {
             return (
               <Card
                 key={_}
-                className="w-full border-1 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center"
+                className="w-full overflow-hidden border-1 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center"
               >
                 <div className="w-full relative">
                   <Image
