@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { LogIn } from 'lucide-react';
+import { LogIn } from "lucide-react";
 
 export default function Home() {
   return (
@@ -15,16 +15,21 @@ export default function Home() {
           priority
         />
         <nav className="flex flex-row gap-4 items-center justify-center">
-          <a href="" className="text-lg">Home</a>
-          <a href="" className="text-lg">About</a>
+          <a href="" className="text-lg">
+            Home
+          </a>
+          <a href="" className="text-lg">
+            About
+          </a>
           <a href="/login">
-            <Button className="text-lg rounded-full px-8 py-4"><LogIn />Login</Button>
+            <Button className="text-lg rounded-full px-8 py-4">
+              <LogIn />
+              Login
+            </Button>
           </a>
         </nav>
       </header>
-      <main>
-      </main>
-
+      <main></main>
     </div>
   );
 }
