@@ -11,12 +11,27 @@ import {
   Filter,
   Heart,
   MapPin,
+  Plane,
+  PlaneTakeoff,
   Search,
+  Send,
   Star,
+  StarOff,
   User,
 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogOverlay,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import Image from "next/image";
 import React from "react";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Home() {
   const providers = [
@@ -139,7 +154,50 @@ export default function Home() {
       </header>
       <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-16 px-32 overflow-y-scroll max-h-[90vh]">
         <h1 className="font-bold text-3xl">Filtrar Prestadores</h1>
-        <Separator className="mb-8" />
+        <Separator className="mb-2" />
+        <Dialog>
+          <DialogTrigger>
+            <Card className="p-4 mb-6 border-2 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-background hover:scale-105 hover:shadow-2xl hover:cursor-pointer transition-all">
+              <h1>
+                Seu serviço com{" "}
+                <span className="font-extrabold border-b-2">Maria Silva</span>{" "}
+                foi concluído. Avalie agora e ganhe um <span>desconto</span> em
+                sua próxima compra!
+              </h1>
+            </Card>
+          </DialogTrigger>
+          <DialogOverlay className="backdrop-blur-sm" />
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>
+                Avalie seu serviço com <span>Maria Silva.</span>
+              </DialogTitle>
+              <DialogDescription>
+                Ajude-nos a melhorar Deixe sua avaliação para o serviço de{" "}
+                <strong>Faxina Completa</strong> com{" "}
+                <strong>Maria Silva</strong> em <strong>20/07/2025.</strong>
+              </DialogDescription>
+            </DialogHeader>
+            <h1 className="text-center">Sua nota</h1>
+            <div className="flex gap-2 m-auto">
+              <Star className="stroke-1 fill-indigo-500 text-indigo-700  w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-500 text-indigo-700 w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-500 text-indigo-700 w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-500 text-indigo-700 w-12 h-auto" />
+              <Star className="stroke-1 w-12 h-auto" />
+            </div>
+            <div>
+              <Label htmlFor="" className="mb-4">
+                Comentário <span className="opacity-70">(opcional)</span>
+              </Label>
+              <Textarea placeholder="Compartilhe sua experiência com o serviço..." />
+            </div>
+            <Button className="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+              <Send />
+              Enviar Avaliação
+            </Button>
+          </DialogContent>
+        </Dialog>
         <Input
           className="w-full py-4 bg-background rounded-full"
           placeholder="Buscar por nome ou cidade"
