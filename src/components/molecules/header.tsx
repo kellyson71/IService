@@ -51,7 +51,10 @@ export default function Header() {
               </div>
             </div>
             <Separator />
-            <a className="text-sm text-center text-indigo-600 hover:scale-105 hover:text-indigo-800 hover:cursor-pointer">
+            <a
+              href="/inbox"
+              className="text-sm text-center text-indigo-600 hover:scale-105 hover:text-indigo-800 hover:cursor-pointer"
+            >
               Exibir tudo
             </a>
           </div>
