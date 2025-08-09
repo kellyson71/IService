@@ -32,6 +32,7 @@ import Image from "next/image";
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import Header from "@/components/molecules/header";
 
 export default function Home() {
   const providers = [
@@ -134,24 +135,7 @@ export default function Home() {
   ];
   return (
     <div className="w-screen h-screen bg-background flex flex-col items-center justify-start">
-      <header className="flex flex-row items-center justify-between top-0 bg-background w-full px-8 py-4 border-1 border-accent">
-        <h1>
-          <a href="/home">iServices</a>
-        </h1>
-        <div className="w-full mx-10 relative max-sm:hidden">
-          <div className="absolute h-full flex items-center justify-center pl-2">
-            <Search className="opacity-50" />
-          </div>
-          <Input
-            className="rounded-full pl-10"
-            placeholder="Buscar prestadora..."
-          />
-        </div>
-        <Button className="rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <User />
-          Perfil
-        </Button>
-      </header>
+      <Header />
       <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-16 px-32 overflow-y-scroll max-h-[90vh]">
         <h1 className="font-bold text-3xl">Filtrar Prestadores</h1>
         <Separator className="mb-2" />

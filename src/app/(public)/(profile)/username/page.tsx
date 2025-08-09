@@ -5,9 +5,10 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Avatar } from "@/components/ui/avatar";
-import { Award, Clock, Heart, Search, Star, User } from "lucide-react";
+import { Award, Clock, Heart, Inbox, Search, Star, User } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import Header from "@/components/molecules/header";
 
 export default function UserPage() {
   const user = {
@@ -47,24 +48,7 @@ export default function UserPage() {
 
   return (
     <div className="w-screen h-screen bg-background flex flex-col items-center justify-start">
-      <header className="flex flex-row items-center justify-between top-0 bg-background w-full px-8 py-4 border-1 border-accent">
-        <h1>
-          <a href="/home">iServices</a>
-        </h1>
-        <div className="w-full mx-10 relative max-sm:hidden">
-          <div className="absolute h-full flex items-center justify-center pl-2">
-            <Search className="opacity-50" />
-          </div>
-          <Input
-            className="rounded-full pl-10"
-            placeholder="Buscar prestadora..."
-          />
-        </div>
-        <Button className="rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <User />
-          Perfil
-        </Button>
-      </header>
+      <Header />
       <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-8 px-32 overflow-y-scroll max-h-[90vh]">
         <div className="bg-neutral-200 p-8 rounded-3xl">
           <div className="min-md:grid min-md:grid-cols-3 items-center gap-4">
@@ -216,9 +200,14 @@ export default function UserPage() {
             </Card>
           </div>
         </div>
-        <Button className="hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
-          Entrar em contato agora.
-        </Button>
+        <div className="flex gap-4 w-full">
+          <Button className="flex-1 hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+            Entrar em contato agora.
+          </Button>
+          <Button className="flex-1 hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+            Contratar
+          </Button>
+        </div>
       </main>
     </div>
   );
