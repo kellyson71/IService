@@ -1,3 +1,4 @@
+"use client";
 import { AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -5,10 +6,34 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Avatar } from "@/components/ui/avatar";
-import { Award, Clock, Heart, Inbox, Search, Star, User } from "lucide-react";
+import {
+  Award,
+  Calendar,
+  ChevronDownIcon,
+  Clock,
+  Heart,
+  Inbox,
+  Search,
+  Star,
+  User,
+} from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Header from "@/components/molecules/header";
+import {
+  Dialog,
+  DialogContent,
+  DialogOverlay,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import ScheduleForm from "@/components/molecules/schedule-form";
 
 export default function UserPage() {
   const user = {
@@ -200,13 +225,24 @@ export default function UserPage() {
             </Card>
           </div>
         </div>
-        <div className="flex gap-4 w-full">
-          <Button className="flex-1 hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="flex gap-4 w-full max-sm:flex-col">
+          <Button
+            variant="outline"
+            className="flex-1 hover:scale-105 hover:cursor-pointer rounded-full"
+          >
             Entrar em contato agora.
           </Button>
-          <Button className="flex-1 hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
-            Contratar
-          </Button>
+          <Dialog>
+            <DialogTrigger className="flex-1">
+              <Button className="flex-1 hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+                Contratar
+              </Button>
+            </DialogTrigger>
+            <DialogOverlay className="backdrop-blur-sm" />
+            <DialogContent>
+              <ScheduleForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </main>
     </div>
