@@ -134,8 +134,8 @@ export default function UserPage() {
         <div className="bg-neutral-200 p-8 rounded-3xl">
           <div className="min-md:grid min-md:grid-cols-3 items-center gap-4">
             <Card className="w-full h-full relative border-1 gap-0 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center">
-              <div className="absolute w-full flex items-center justify-center -top-3">
-                <h1 className="px-4 py-2 bg-background rounded-full">
+              <div className="absolute w-full flex items-center justify-center max-sm:-top-5 -top-3">
+                <h1 className="max-sm:shadow-lg px-4 py-2 bg-background rounded-full">
                   Serviços oferecidos
                 </h1>
               </div>
@@ -171,13 +171,13 @@ export default function UserPage() {
                 </Badge>
               </div>
             </Card>
-            <Card className="max-sm:p-2 w-full h-full border-1 col-start-2 col-end-4 rounded-4xl border-accent shadow-sm flex flex-col p-16 items-center justify-center">
+            <Card className="max-md:p-4 max-md:mt-8 w-full h-full border-1 col-start-2 col-end-4 rounded-4xl border-accent shadow-sm flex flex-col p-16 items-center justify-center">
               <div className="w-full flex flex-col">
                 {user.comments.map((comment, _) => (
                   <>
                     {_ == 0 ? "" : <Separator className="my-4" />}
                     <div className="flex gap-4">
-                      <Avatar className="h-16 w-16 m-auto">
+                      <Avatar className="h-16 w-16 m-auto max-sm:hidden">
                         <AvatarImage
                           className=" object-cover"
                           src="https://i.pinimg.com/564x/84/3f/b1/843fb1ef384a0a97c99250d2dcf0e5a1.jpg"
@@ -186,7 +186,7 @@ export default function UserPage() {
                         <AvatarFallback className="">US</AvatarFallback>
                       </Avatar>
                       <div>
-                        <div className="flex flex-row gap-4">
+                        <div className="flex max-md:flex-col max-md:gap-1 flex-row gap-4">
                           <h1>{comment.username}</h1>
                           <div className="flex flex-row gap-2">
                             <Star className="text-yellow-400 fill-yellow-400" />
@@ -204,7 +204,7 @@ export default function UserPage() {
                             dias
                           </span>
                         </div>
-                        <p>
+                        <p className="max-md:text-balance">
                           Excelente profissional! Muito caprichosa e pontual.
                           Recomendo!
                         </p>
