@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/matheus/dev/projects/IService/src/app/(public)/register/client",
-      "program": "/home/matheus/dev/projects/IService/src/app/(public)/register/client/build/Debug/outDebug",
+      "cwd": "/home/matheus/dev/projects/IService/src/components/molecules",
+      "program": "/home/matheus/dev/projects/IService/src/components/molecules/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

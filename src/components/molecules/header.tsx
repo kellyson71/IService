@@ -4,6 +4,14 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Separator } from "../ui/separator";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
   return (
@@ -64,12 +72,24 @@ export default function Header() {
           </div>
         </PopoverContent>
       </Popover>
-      <a href="/provider/profile">
-        <Button className="hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <User />
-          Perfil
-        </Button>
-      </a>
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <Button className="hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <User />
+            Perfil
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>Maria Silva</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <a href="/provider/profile">
+            <DropdownMenuItem>Configurações</DropdownMenuItem>
+          </a>
+          <a href="/provider/agenda">
+            <DropdownMenuItem>Agendamentos</DropdownMenuItem>
+          </a>{" "}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </header>
   );
 }
