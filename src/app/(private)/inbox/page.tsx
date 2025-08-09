@@ -111,7 +111,7 @@ export default function Inbox() {
     <div className="w-screen h-screen bg-background flex flex-col items-center justify-start">
       <Header />
       <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-16 px-32 overflow-y-scroll max-h-[90vh]">
-        <div className="flex justify-between">
+        <div className="flex max-sm:flex-col max-sm: gap-4 justify-between">
           <h1 className="text-lg font-extrabold">Caixa de entrada</h1>
           <div className="flex gap-2">
             <Button

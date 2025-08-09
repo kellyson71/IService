@@ -22,7 +22,11 @@ export default function Header() {
       </div>
       <Popover>
         <PopoverTrigger>
-          <Button size="icon" variant="outline" className="rounded-full">
+          <Button
+            size="icon"
+            variant="outline"
+            className="rounded-full max-sm:-mr-12"
+          >
             <Inbox />
           </Button>
         </PopoverTrigger>
