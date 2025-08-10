@@ -55,7 +55,7 @@ export default function ScheduleForm() {
                 id="date-picker"
                 className="flex-1 w-full justify-between font-normal"
               >
-                {date ? date.toLocaleDateString() : "Select date"}
+                {date ? date.toLocaleDateString() : "Escolha..."}
                 <ChevronDownIcon />
               </Button>
             </PopoverTrigger>
@@ -97,7 +97,7 @@ export default function ScheduleForm() {
           Faxina completa
           <Badge
             variant="outline"
-            className="bg-background text-md text-primary"
+            className="bg-background text-md text-indigo-600"
           >
             R$ 90,00
           </Badge>
@@ -107,10 +107,7 @@ export default function ScheduleForm() {
           value="b"
         >
           Organização
-          <Badge
-            variant="outline"
-            className="bg-background text-md text-primary"
-          >
+          <Badge variant="outline" className="bg-background text-md">
             R$ 40,00
           </Badge>
         </ToggleGroupItem>
@@ -119,18 +116,15 @@ export default function ScheduleForm() {
           value="c"
         >
           Passar roupa
-          <Badge
-            variant="outline"
-            className="bg-background text-md text-primary"
-          >
+          <Badge variant="outline" className="bg-background text-md">
             R$ 50,00
           </Badge>
         </ToggleGroupItem>
       </ToggleGroup>
       <Separator className="my-4" />
-      <Button className="flex justify-between">
-        Finalizar agendamento
-        <Badge className="bg-background text-md text-primary">R$ 500,00</Badge>
+      <Button className="flex justify-between flex-1 text-center hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+        Agendar
+        <span>R$ 500,00</span>
       </Button>
     </form>
   );
