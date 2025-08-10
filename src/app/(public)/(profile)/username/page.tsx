@@ -149,7 +149,10 @@ export default function UserPage() {
                 </h1>
               </div>
               <div className="flex flex-col gap-4 w-full p-6">
-                <Badge className="hover:scale-105 transition-all text-lg w-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+                <Badge
+                  variant="purple"
+                  className="hover:scale-105 transition-all text-lg w-full"
+                >
                   Faxina Completa
                 </Badge>
                 {user.services.map((item) => (

@@ -122,7 +122,10 @@ export default function ScheduleForm() {
         </ToggleGroupItem>
       </ToggleGroup>
       <Separator className="my-4" />
-      <Button className="flex justify-between flex-1 text-center hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+      <Button
+        variant="purple"
+        className="flex justify-between flex-1 text-center hover:scale-105"
+      >
         Agendar
         <span>R$ 500,00</span>
       </Button>

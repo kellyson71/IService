@@ -176,7 +176,7 @@ export default function Home() {
               </Label>
               <Textarea placeholder="Compartilhe sua experiência com o serviço..." />
             </div>
-            <Button className="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <Button variant="purple">
               <Send />
               Enviar Avaliação
             </Button>
@@ -214,7 +214,7 @@ export default function Home() {
             />
           </div>
           <Separator orientation="vertical" />
-          <Button className="rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+          <Button variant="purple" className="rounded-full">
             <Filter />
             Filtrar
           </Button>

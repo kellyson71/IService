@@ -74,7 +74,7 @@ export default function Header() {
       </Popover>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <Button className="hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+          <Button variant="purple" className="rounded-full">
             <User />
             Perfil
           </Button>

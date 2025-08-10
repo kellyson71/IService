@@ -115,21 +115,21 @@ export default function Inbox() {
           <h1 className="text-lg font-extrabold">Caixa de entrada</h1>
           <div className="flex gap-2">
             <Button
-              variant={selected == "new" ? "default" : "outline"}
+              variant={selected == "new" ? "purple" : "outline"}
               className="rounded-full"
               onClick={() => setSelected("new")}
             >
               Novas
             </Button>
             <Button
-              variant={selected == "old" ? "default" : "outline"}
+              variant={selected == "old" ? "purple" : "outline"}
               className="rounded-full"
               onClick={() => setSelected("old")}
             >
               Não lidas
             </Button>
             <Button
-              variant={selected == "archived" ? "default" : "outline"}
+              variant={selected == "archived" ? "purple" : "outline"}
               className="rounded-full"
               onClick={() => setSelected("archived")}
             >
