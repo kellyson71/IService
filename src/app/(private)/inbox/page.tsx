@@ -141,8 +141,8 @@ export default function Inbox() {
         <div className="flex flex-col gap-4">
           {notifications
             .filter((e) => e.status == selected)
-            .map((item) => (
-              <div className="flex gap-4 items-center justify-between bg-card border-1 rounded-lg p-8">
+            .map((item, index) => (
+              <div key={index} className="flex gap-4 items-center justify-between bg-card border-1 rounded-lg p-8">
                 <div className="flex gap-4">
                   {(() => {
                     switch (item.type) {

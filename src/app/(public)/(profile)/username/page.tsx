@@ -155,8 +155,9 @@ export default function UserPage() {
                 >
                   Faxina Completa
                 </Badge>
-                {user.services.map((item) => (
+                {user.services.map((item, index) => (
                   <Badge
+                    key={index}
                     variant="outline"
                     className="hover:scale-105 transition-all text-lg w-full"
                   >
@@ -185,9 +186,9 @@ export default function UserPage() {
             </Card>
             <Card className="max-md:p-4 max-md:mt-8 w-full h-full border-1 col-start-2 col-end-4 rounded-4xl border-accent shadow-sm flex flex-col p-16 items-center justify-center">
               <div className="w-full flex flex-col">
-                {user.comments.map((comment, _) => (
-                  <>
-                    {_ == 0 ? "" : <Separator className="my-4" />}
+                {user.comments.map((comment, index) => (
+                  <div key={index}>
+                    {index === 0 ? "" : <Separator className="my-4" />}
                     <div className="flex gap-4">
                       <Avatar className="h-16 w-16 m-auto max-sm:hidden">
                         <AvatarImage
@@ -222,7 +223,7 @@ export default function UserPage() {
                         </p>
                       </div>
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </Card>
