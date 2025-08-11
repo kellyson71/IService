@@ -17,7 +17,7 @@ import {
   User,
 } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Header from "@/components/molecules/header";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
@@ -31,8 +31,8 @@ import { Calendar } from "../ui/calendar";
 import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 
 export default function ScheduleForm() {
-  const [open, setOpen] = React.useState(false);
-  const [date, setDate] = React.useState<Date | undefined>(undefined);
+  const [open, setOpen] = useState(false);
+  const [date, setDate] = useState<Date | undefined>(undefined);
 
   return (
     <form className="flex flex-col gap-4">
