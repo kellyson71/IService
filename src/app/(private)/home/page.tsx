@@ -221,16 +221,16 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] items-center gap-4">
-          {providers.map((e, _) => {
+          {providers.map((e, index) => {
             return (
               <Card
-                key={_}
+                key={index}
                 className="w-full overflow-hidden border-1 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center"
               >
                 <div className="w-full relative">
                   <Image
                     src="https://static.vecteezy.com/system/resources/previews/020/933/072/non_2x/abstract-blur-gradient-background-vector.jpg"
-                    alt={String(_)}
+                    alt={String(index)}
                     width={1742}
                     height={980}
                     className="w-full h-30 object-cover rounded-3xl"
@@ -261,8 +261,9 @@ export default function Home() {
                     </Button>
                   </div>
                   <div className="w-full flex flex-row gap-2 mt-2">
-                    {e.services.map((item) => (
+                    {e.services.map((item, serviceIndex) => (
                       <Badge
+                        key={serviceIndex}
                         variant="outline"
                         className="py-2 px-4 rounded-full font-normal"
                       >
