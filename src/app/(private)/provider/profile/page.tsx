@@ -10,8 +10,11 @@ import {
   Camera,
   Clock,
   DollarSign,
+  FileText,
   MapPin,
   Plus,
+  ScrollText,
+  Star,
   Trash,
   Trash2,
   User,
@@ -76,7 +79,7 @@ export default function ProviderProfile() {
                 />
               </div>
             </div>
-            <div className="flex flex-col gap-2 -mt-4">
+            <div className="flex flex-col gap-2">
               <Label>Descrição profissional</Label>
               <Textarea
                 className="radius-md h-10 relative"
@@ -143,7 +146,7 @@ busco deixar tudo impecável."
                   <Label>Nome do serviço</Label>
                   <Input
                     className="radius-md h-10 relative"
-                    placeholder="Maria Silva"
+                    placeholder="Limpeza completa"
                     type="text"
                   />
                 </div>
@@ -174,7 +177,7 @@ busco deixar tudo impecável."
                   <Label>Nome do serviço</Label>
                   <Input
                     className="radius-md h-10 relative"
-                    placeholder="Maria Silva"
+                    placeholder="Passar roupa"
                     type="text"
                   />
                 </div>
@@ -397,6 +400,52 @@ busco deixar tudo impecável."
               </label>
             </div>
           </Card>
+
+          <Card className="p-8 max-sm:w-full w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
+            <div className="flex items-center gap-4">
+              <ScrollText className="text-indigo-600" />{" "}
+              <h1 className="text-xl font-bold">Documentos</h1>
+            </div>
+            <div className="w-full max-sm:flex-col flex flex-1 flex-row gap-4 justify-between">
+              <Card className="shadow-none border-dashed flex-1 flex flex-col gap-1 items-center text-neutral-700">
+                <FileText />
+                RG ou CNH
+                <Button variant={"outline"}>Enviar documento</Button>
+              </Card>
+              <Card className="shadow-none border-dashed flex-1 flex flex-col gap-1 items-center text-neutral-700">
+                <FileText />
+                Comprovante de residência
+                <Button variant={"outline"}>Enviar documento</Button>
+              </Card>
+            </div>
+            <h2 className="p-4 bg-indigo-50 rounded-lg">
+              <strong className="text-indigo-600">Importante: </strong>Os
+              documentos são necessários para verificação de identidade e
+              aumentam a confiança dos clientes.
+            </h2>
+          </Card>
+
+          <Card className="p-8 max-sm:w-full w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
+            <div className="flex items-center gap-4">
+              <Star className="text-indigo-600" />{" "}
+              <h1 className="text-xl font-bold">Suas estatísticas</h1>
+            </div>
+            <div className="w-full max-sm:flex-col flex flex-1 flex-row gap-4 justify-between text-neutral-700 text-sm">
+              <div className="flex flex-col items-center gap-2 border-1 p-4 rounded-lg flex-1">
+                <h2 className="text-4xl text-indigo-600 font-black">4.8</h2>
+                Avaliação média
+              </div>
+              <div className="flex flex-col items-center gap-2 border-1 p-4 rounded-lg flex-1">
+                <h2 className="text-4xl text-indigo-600 font-black">127</h2>
+                Serviços realizados
+              </div>
+              <div className="flex flex-col items-center gap-2 border-1 p-4 rounded-lg flex-1">
+                <h2 className="text-4xl text-indigo-600 font-black">98%</h2>
+                Taxa de aprovação
+              </div>
+            </div>
+          </Card>
+
           <Card className="p-8 flex gap-2 flex-row max-sm:w-full w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
             <Button variant="purple" className="flex-1">
               Salvar alterações
