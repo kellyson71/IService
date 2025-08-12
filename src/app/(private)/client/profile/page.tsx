@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import {
   ArrowLeft,
@@ -160,7 +161,7 @@ export default function ProviderProfile() {
                     Receber atualizações sobre seus agendamentos
                   </label>
                 </div>
-                <Button />
+                <Switch />
               </div>
               <Separator className="my-2" />
               <div className="flex justify-between hover:bg-accent hover:scale-103 transition-all items-center w-full cursor-pointer">
@@ -170,7 +171,7 @@ export default function ProviderProfile() {
                     Receber atualizações sobre seus agendamentos
                   </label>
                 </div>
-                <Button />
+                <Switch />
               </div>
               <Separator className="my-2" />
               <div className="flex justify-between hover:bg-accent hover:scale-103 transition-all items-center w-full cursor-pointer">
@@ -180,7 +181,7 @@ export default function ProviderProfile() {
                     Receber atualizações sobre seus agendamentos
                   </label>
                 </div>
-                <Button />
+                <Switch />
               </div>
             </div>
           </Card>
