@@ -29,15 +29,15 @@ import React from "react";
 export default function ProviderProfile() {
   return (
     <div className="w-screen min-h-screen overflow-y-auto bg-accent flex items-start justify-center">
-      <header className="fixed top-0 w-screen bg-background flex gap-4 p-4 font-semibold text-foreground/90 border-b-1 text-md items-center">
+      <header className="fixed top-0 z-10 w-screen bg-background flex gap-4 p-4 font-semibold text-foreground/90 border-b-1 text-md items-center">
         <a href="/home">
           <ArrowLeft className="hover:text-neutral-400" />
         </a>
-        Perfil Prestador
+        Perfil Cliente
       </header>
       <main className="mt-30 my-20">
-        <form className=" flex flex-col gap-8">
-          <Card className="p-8 max-sm:w-full w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
+        <form className=" flex flex-col gap-8 items-center">
+          <Card className="p-8 max-sm:w-[90vw] w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
             <div className="flex items-center gap-4">
               <User className="text-indigo-600" />{" "}
               <h1 className="text-xl font-bold">Informações Básicas</h1>
@@ -66,7 +66,7 @@ export default function ProviderProfile() {
                 </Button>
               </div>
             </div>
-            <div className="w-full flex flex-1 flex-row gap-4 justify-between">
+            <div className="w-full flex flex-1 flex-row max-sm:flex-col gap-4 justify-between">
               <div className="flex-1 flex flex-col gap-2">
                 <Label>Nome completo</Label>
                 <Input
@@ -84,7 +84,7 @@ export default function ProviderProfile() {
                 />
               </div>
             </div>
-            <div className="w-full flex flex-1 flex-row gap-4 justify-between">
+            <div className="w-full flex flex-1 flex-row max-sm:flex-col gap-4 justify-between">
               <div className="flex-1 flex flex-col gap-2">
                 <Label>CEP</Label>
                 <Input
@@ -115,15 +115,21 @@ export default function ProviderProfile() {
               Salvar
             </Button>
           </Card>
-          <Card className="p-8 max-sm:w-full w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
+          <Card className="p-8 max-sm:w-[90vw] w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
             <div className="flex items-center gap-4">
               <CreditCard className="text-indigo-600" />{" "}
               <h1 className="text-xl font-bold">Formas de pagamento</h1>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex justify-between hover:bg-accent hover:scale-103 transition-all items-center w-full p-4 border rounded-md cursor-pointer">
-                <div className="flex items-center gap-4">
-                  <h2 className="px-2 py-1 bg-blue-800 text-white">VISA</h2>
+              <div className="flex max-sm:flex-col justify-between hover:bg-accent hover:scale-103 transition-all items-center w-full p-4 border rounded-md cursor-pointer">
+                <div className="flex items-center gap-4 max-sm:flex-col">
+                  <div className="flex gap-4 min-sm:hidden">
+                    <h2 className="px-2 py-1 bg-blue-800 text-white">VISA</h2>
+                    <Badge variant={"secondary"}>Principal</Badge>
+                  </div>
+                  <h2 className="px-2 py-1 bg-blue-800 text-white max-sm:hidden">
+                    VISA
+                  </h2>
                   <div>
                     <h2>**** **** **** 1234</h2>
                     <label className="text-sm text-neutral-500">
@@ -131,7 +137,9 @@ export default function ProviderProfile() {
                     </label>
                   </div>
                 </div>
-                <Badge variant={"secondary"}>Principal</Badge>
+                <Badge variant={"secondary"} className="max-sm:hidden">
+                  Principal
+                </Badge>
               </div>
               <Button variant={"outline"}>
                 <CreditCard />
@@ -139,7 +147,7 @@ export default function ProviderProfile() {
               </Button>
             </div>
           </Card>
-          <Card className="p-8 max-sm:w-full w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
+          <Card className="p-8 max-sm:w-[90vw] w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
             <div className="flex items-center gap-4">
               <CreditCard className="text-indigo-600" />{" "}
               <h1 className="text-xl font-bold">Formas de pagamento</h1>
@@ -176,12 +184,12 @@ export default function ProviderProfile() {
               </div>
             </div>
           </Card>
-          <Card className="p-8 max-sm:w-full gap-2 w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
+          <Card className="p-8 max-sm:w-[90vw] gap-2 w-[60vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
             <div className="flex items-center gap-4 mb-4">
               <Shield className="text-indigo-600" />{" "}
               <h1 className="text-xl font-bold">Segurança</h1>
             </div>
-            <div className="flex w-full gap-4">
+            <div className="flex w-full gap-4 max-sm:flex-col max-sm:gap-2">
               <Button variant={"outline"} className="flex-1">
                 Alterar Senha
               </Button>
