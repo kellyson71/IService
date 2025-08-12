@@ -9,7 +9,7 @@ export default function Home() {
         <Image
           className="dark:invert"
           src="https://i.postimg.cc/76hJRmSq/i-Service-Large-Logo.png"
-          alt="iService logo"
+          alt="iService logotest"
           width={180}
           height={38}
           priority
