@@ -90,12 +90,12 @@ export default function Agenda() {
     <div className="w-screen h-screen bg-background flex flex-col items-center justify-start">
       <Header />
       <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-16 px-32 overflow-y-scroll max-h-[90vh]">
-        <div className="bg-accent rounded-2xl p-12">
+        <div className="bg-accent rounded-2xl max-sm:p-4 p-12">
           <div className="flex max-sm:flex-col max-sm: gap-4 justify-between">
             <h1 className="text-lg font-extrabold">Próximos serviços</h1>
           </div>
           <Separator className="mb-8" />
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row gap-4 max-sm:flex-col">
             {upcoming.map((item) => (
               <Card className="flex-1 relative flex gap-4 items-center justify-between bg-card border-1 rounded-lg p-4">
                 <div className="absolute -top-4">
@@ -108,9 +108,9 @@ export default function Agenda() {
                     dias
                   </Badge>
                 </div>
-                <div className="flex-1 w-full flex justify-between">
+                <div className="flex-1 w-full max-sm:flex-col max-sm:gap-4 flex justify-between">
                   <div className="flex flex-1 w-full gap-4">
-                    <Clock className="text-red-600 w-12 h-auto" />
+                    <Clock className="text-red-600 w-12 h-auto max-sm:hidden" />
                     <div className="flex flex-col gap-1">
                       <h1 className="text-sm font-extrabold">
                         Rua 15 de Novembro
@@ -125,7 +125,7 @@ export default function Agenda() {
                       </div>
                     </div>
                   </div>
-                  <Badge variant="outline" className="text-md">
+                  <Badge variant="outline" className="text-md max-sm:shadow-lg">
                     {item.value}
                   </Badge>
                 </div>
@@ -133,10 +133,10 @@ export default function Agenda() {
             ))}
           </div>
         </div>
-        <div className="bg-accent rounded-2xl p-12">
+        <div className="bg-accent rounded-2xl max-sm:p-4 p-12">
           <div className="mb-4 flex max-sm:flex-col max-sm: gap-4 justify-between">
             <h1 className="text-lg font-extrabold">Lista de serviços</h1>
-            <div className="flex gap-2">
+            <div className="flex gap-2 max-sm:overflow-y-auto">
               <Button
                 variant={selected == "all" ? "purple" : "outline"}
                 className="rounded-full"
@@ -195,9 +195,9 @@ export default function Agenda() {
                     }
                   })()}
                 </div>
-                <div className="flex-1 w-full flex justify-between">
+                <div className="flex-1 w-full max-sm:flex-col max-sm:gap-4 flex justify-between">
                   <div className="flex flex-1 w-full gap-4">
-                    <Clock className="text-neutral-700 w-12 h-auto" />
+                    <Clock className="text-neutral-700 w-12 h-auto max-sm:hidden" />
                     <div className="flex flex-col gap-1">
                       <h1 className="text-sm font-extrabold">
                         Rua 15 de Novembro
@@ -212,7 +212,7 @@ export default function Agenda() {
                       </div>
                     </div>
                   </div>
-                  <Badge variant="outline" className="text-md">
+                  <Badge variant="outline" className="text-md max-sm:shadow-lg">
                     {item.value}
                   </Badge>
                 </div>

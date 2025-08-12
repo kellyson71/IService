@@ -21,7 +21,7 @@ export default function Header() {
       </h1>
       <div className="w-full relative mx-2 max-sm:hidden">
         <div className="absolute h-full flex items-center justify-center pl-2">
-          <Search className="opacity-50" />
+          <Search className="opacity-50 w-5 h-5" />
         </div>
         <Input
           className="rounded-full pl-10"
@@ -33,12 +33,12 @@ export default function Header() {
           <Button
             size="icon"
             variant="outline"
-            className="rounded-full max-sm:-mr-12"
+            className="rounded-full max-sm:-mr-8"
           >
             <Inbox />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-100 mr-10">
+        <PopoverContent className="w-100 mr-10 max-sm:w-screen">
           <div className="flex flex-col gap-4">
             <div className="flex gap-4 items-center justify-start">
               <Clock className="text-amber-600 w-8 h-auto" />

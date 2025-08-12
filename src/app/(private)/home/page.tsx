@@ -164,11 +164,11 @@ export default function Home() {
             </DialogHeader>
             <h1 className="text-center">Sua nota</h1>
             <div className="flex gap-2 m-auto">
-              <Star className="stroke-1 fill-indigo-500 text-indigo-700  w-12 h-auto" />
-              <Star className="stroke-1 fill-indigo-500 text-indigo-700 w-12 h-auto" />
-              <Star className="stroke-1 fill-indigo-500 text-indigo-700 w-12 h-auto" />
-              <Star className="stroke-1 fill-indigo-500 text-indigo-700 w-12 h-auto" />
-              <Star className="stroke-1 w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-600 text-indigo-600  w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-600 text-indigo-600 w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-600 text-indigo-600 w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-200 text-indigo-200 w-12 h-auto" />
+              <Star className="stroke-1 fill-indigo-200 text-indigo-200 w-12 h-auto" />
             </div>
             <div>
               <Label htmlFor="" className="mb-4">
@@ -176,7 +176,7 @@ export default function Home() {
               </Label>
               <Textarea placeholder="Compartilhe sua experiência com o serviço..." />
             </div>
-            <Button variant="purple">
+            <Button className="bg-indigo-600 hover:bg-indigo-800">
               <Send />
               Enviar Avaliação
             </Button>
@@ -187,30 +187,36 @@ export default function Home() {
           placeholder="Buscar por nome ou cidade"
         />
         <div className="flex flex-row gap-4 max-sm:hidden">
-          <div className="flex flex-row gap-2 items-center justify-center">
-            <Star />
+          <div className="flex flex-row relative gap-2 flex-1 items-center justify-center">
+            <div className="absolute flex items-center justify-center left-3">
+              <Star className=" stroke-2 w-4 h-4 text-neutral-400 fill-neutral-400" />
+            </div>
             <Input
               type="text"
               placeholder="Nota"
-              className="rounded-full bg-background"
+              className="rounded-full pl-8 bg-background"
             />
           </div>
           <Separator orientation="vertical" />
-          <div className="flex flex-row gap-2 items-center justify-center">
-            <DollarSign />
+          <div className="flex flex-row relative gap-2 flex-1 items-center justify-center">
+            <div className="absolute flex items-center justify-center left-3">
+              <DollarSign className=" stroke-2 w-4 h-4 text-neutral-400" />
+            </div>
             <Input
               type="text"
               placeholder="Preço"
-              className="rounded-full bg-background"
+              className="rounded-full pl-8 bg-background"
             />
           </div>
           <Separator orientation="vertical" />
-          <div className="flex flex-row gap-2 items-center justify-center">
-            <MapPin />
+          <div className="flex flex-row relative gap-2 flex-1 items-center justify-center">
+            <div className="absolute flex items-center justify-center left-3">
+              <MapPin className=" stroke-2 w-4 h-4 text-neutral-400" />
+            </div>
             <Input
               type="text"
               placeholder="Distância"
-              className="rounded-full bg-background"
+              className="rounded-full pl-8 bg-background"
             />
           </div>
           <Separator orientation="vertical" />
