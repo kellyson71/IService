@@ -13,7 +13,7 @@ export default function Checkout() {
         </a>
         Pagamento
       </header>
-      <main className="p-8 w-[30vw] bg-background border-1 border-accent rounded-2xl shadow-2xl">
+      <main className="p-8 max-sm:w-full max-lg:w-3/5 w-[30vw] mt-[6vh] bg-background border-1 border-accent rounded-2xl shadow-2xl">
         <div className="flex flex-col max-sm: gap-4 justify-between">
           <h1 className="text-lg font-extrabold">Resumo do serviço</h1>
           <div className="flex justify-between w-full">

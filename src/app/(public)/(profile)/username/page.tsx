@@ -75,7 +75,7 @@ export default function UserPage() {
     <div className="w-screen h-screen bg-background flex flex-col items-center justify-start">
       <Header />
       <main className="max-sm:p-4 w-full flex-1 flex flex-col gap-4 p-8 px-32 overflow-y-scroll max-h-[90vh]">
-        <div className="bg-neutral-200 p-8 rounded-3xl">
+        <div className="bg-neutral-200 max-sm:px-4 p-8 rounded-3xl">
           <div className="min-md:grid min-md:grid-cols-3 items-center gap-4">
             <Card className="w-full border-1 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center">
               <div className="w-full relative">
@@ -140,7 +140,7 @@ export default function UserPage() {
             </Card>
           </div>
         </div>
-        <div className="bg-neutral-200 p-8 rounded-3xl">
+        <div className="bg-neutral-200 max-sm:px-4 p-8 rounded-3xl">
           <div className="min-md:grid min-md:grid-cols-3 items-center gap-4">
             <Card className="w-full h-full relative border-1 gap-0 rounded-4xl border-accent shadow-sm flex flex-col p-2 items-center justify-center">
               <div className="absolute w-full flex items-center justify-center max-sm:-top-5 -top-3">
@@ -237,13 +237,13 @@ export default function UserPage() {
             Entrar em contato agora.
           </Button>
           <Dialog>
-            <DialogTrigger className="flex-1">
-              <Button className="flex-1 hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <DialogTrigger className="flex-1 w-full">
+              <Button className="flex-1 w-full hover:scale-105 hover:from-indigo-600 hover:cursor-pointer hover:via-purple-600 hover:to-pink-600 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Contratar
               </Button>
             </DialogTrigger>
             <DialogOverlay className="backdrop-blur-sm" />
-            <DialogContent className="w-90">
+            <DialogContent className="max-sm:w-full w-80">
               <ScheduleForm />
             </DialogContent>
           </Dialog>

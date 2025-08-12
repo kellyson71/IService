@@ -35,15 +35,15 @@ export default function ScheduleForm() {
   const [date, setDate] = useState<Date | undefined>(undefined);
 
   return (
-    <form className="flex flex-col gap-4">
-      <div className="flex flex-col gap-3 relative">
+    <form className="flex flex-col gap-4 items-center overflow-hidden">
+      <div className="flex flex-col gap-3 relative w-full">
         <Label className="px-1">Descrição do serviço</Label>
         <Textarea
           placeholder="Explique o que espera do serviço..."
-          className="radius-md h-10"
+          className="radius-md h-10 w-"
         />
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 w-full">
         <div className="flex flex-col gap-3 w-full">
           <Label htmlFor="date-picker" className="px-1">
             Data
