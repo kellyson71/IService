@@ -21,7 +21,7 @@ export default function Header() {
       </h1>
       <div className="w-full relative mx-2 max-sm:hidden">
         <div className="absolute h-full flex items-center justify-center pl-2">
-          <Search className="opacity-50" />
+          <Search className="opacity-50 w-5 h-5" />
         </div>
         <Input
           className="rounded-full pl-10"

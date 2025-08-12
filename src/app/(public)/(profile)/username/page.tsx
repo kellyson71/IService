@@ -243,7 +243,7 @@ export default function UserPage() {
               </Button>
             </DialogTrigger>
             <DialogOverlay className="backdrop-blur-sm" />
-            <DialogContent className="w-90">
+            <DialogContent className="max-sm:w-full w-80">
               <ScheduleForm />
             </DialogContent>
           </Dialog>
