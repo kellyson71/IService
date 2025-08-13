@@ -11,13 +11,8 @@ import {
   Filter,
   Heart,
   MapPin,
-  Plane,
-  PlaneTakeoff,
-  Search,
   Send,
   Star,
-  StarOff,
-  User,
 } from "lucide-react";
 import {
   Dialog,

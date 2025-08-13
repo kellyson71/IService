@@ -3,20 +3,9 @@ import { AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Avatar } from "@/components/ui/avatar";
-import {
-  Award,
-  Calendar,
-  ChevronDownIcon,
-  Clock,
-  Heart,
-  Inbox,
-  Search,
-  Star,
-  User,
-} from "lucide-react";
+import { Award, Clock, Heart, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Header from "@/components/molecules/header";
@@ -26,13 +15,6 @@ import {
   DialogOverlay,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import ScheduleForm from "@/components/molecules/schedule-form";
 
 export default function UserPage() {
