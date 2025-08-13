@@ -10,6 +10,24 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, error: 'Campos obrigatórios faltando' }, { status: 400 })
     }
 
+    // Credenciais mockadas para desenvolvimento
+    const MOCK_USERS = [
+      { email: 'cliente@mock.local', password: '123456', role: 'client' as const, display_name: 'Cliente Demo' },
+      { email: 'provedor@mock.local', password: '123456', role: 'provider' as const, display_name: 'Prestador Demo' },
+    ]
+    const matched = MOCK_USERS.find(u => u.email === body.email && u.password === body.password)
+    if (matched) {
+      const mockProfile = {
+        id: 'mock-' + matched.role,
+        email: matched.email,
+        display_name: matched.display_name,
+        role: matched.role,
+      }
+      const res = NextResponse.json({ ok: true, session: { access_token: 'mock-token' }, profile: mockProfile })
+      res.cookies.set('mock_auth', JSON.stringify(mockProfile), { path: '/', httpOnly: true, sameSite: 'lax' })
+      return res
+    }
+
     const supabase = getSupabaseServerClient()
     const { data, error } = await supabase.auth.signInWithPassword({
       email: body.email,

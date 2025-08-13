@@ -76,7 +76,7 @@ export interface Users {
   email: string
   password_hash: string
   phone: string
-  user_type: 'client' | 'provider'
+  user_type: 'client' | 'provider', 
   active: boolean
   register_date: Date
   update_date: Date
