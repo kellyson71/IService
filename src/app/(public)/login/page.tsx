@@ -27,14 +27,7 @@ export default function Login() {
         setError(json.error || "Falha no login");
         return;
       }
-      const role: "client" | "provider" | undefined = json?.profile?.role;
-      if (role === "client") {
-        router.push("/dashboard/client");
-      } else if (role === "provider") {
-        router.push("/dashboard/provider");
-      } else {
-        router.push("/home");
-      }
+      router.push("/home");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro desconhecido");
     } finally {

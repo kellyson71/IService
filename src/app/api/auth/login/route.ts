@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseServerClient } from '@/lib/supabase/server'
+import { createSupabaseMiddlewareClient } from '../../../../../utils/supabase/middleware'
 
 type Body = { email: string; password: string }
 
@@ -10,7 +11,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, error: 'Campos obrigatórios faltando' }, { status: 400 })
     }
 
-    const supabase = getSupabaseServerClient()
+    const resCookies = NextResponse.next()
+    const supabase = createSupabaseMiddlewareClient(req, resCookies)
     const { data, error } = await supabase.auth.signInWithPassword({
       email: body.email,
       password: body.password,
@@ -49,7 +51,12 @@ export async function POST(req: NextRequest) {
       profile = upserted ?? null
     }
 
-    return NextResponse.json({ ok: true, session: data.session, profile })
+    const out = NextResponse.json({ ok: true, session: data.session, profile })
+    // Propaga cookies de autenticação setados pelo cliente SSR
+    for (const c of resCookies.cookies.getAll()) {
+      out.cookies.set(c)
+    }
+    return out
   } catch (e: unknown) {
     const message = e instanceof Error ? e.message : 'Erro desconhecido'
     return NextResponse.json({ ok: false, error: message }, { status: 500 })
