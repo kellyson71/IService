@@ -1,5 +1,6 @@
 "use client"
 
+import * as React from "react"
 import { cn } from "@/lib/utils"
 
 interface GridPatternProps {
@@ -20,7 +21,8 @@ export function GridPattern({
   className,
   ...props
 }: GridPatternProps) {
-  const id = `grid-pattern-${Math.random().toString(36).substr(2, 9)}`
+  const reactId = React.useId()
+  const id = `grid-pattern-${reactId.replace(/:/g, "")}`
 
   return (
     <svg
