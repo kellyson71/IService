@@ -4,9 +4,7 @@ import { getSupabaseServerClient } from '@/lib/supabase/server'
 export async function POST() {
   const supabase = getSupabaseServerClient()
   await supabase.auth.signOut()
-  const res = NextResponse.json({ ok: true })
-  res.cookies.set('mock_auth', '', { path: '/', maxAge: 0 })
-  return res
+  return NextResponse.json({ ok: true })
 }
 
 

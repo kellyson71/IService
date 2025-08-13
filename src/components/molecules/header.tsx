@@ -1,5 +1,6 @@
 import { CheckCircle, Clock, Inbox, Search, User } from "lucide-react";
 import React from "react";
+import { getSupabaseServerClient } from "../../../utils/supabase/server";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
@@ -13,7 +14,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export default function Header() {
+export default async function Header() {
+  const supabase = getSupabaseServerClient();
+  const { data } = await supabase.auth.getUser();
+  const user = data.user;
+  const displayName = (user?.user_metadata?.display_name as string | undefined) || "Perfil";
   return (
     <header className="flex flex-row items-center justify-between top-0 bg-background w-full px-8 py-4 border-1 border-accent gap-2">
       <h1>
@@ -76,18 +81,18 @@ export default function Header() {
         <DropdownMenuTrigger>
           <Button variant="purple" className="rounded-full">
             <User />
-            Perfil
+            {displayName}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuLabel>Maria Silva</DropdownMenuLabel>
+          <DropdownMenuLabel>{displayName}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <a href="/provider/profile">
             <DropdownMenuItem>Configurações</DropdownMenuItem>
           </a>
           <a href="/provider/agenda">
             <DropdownMenuItem>Agendamentos</DropdownMenuItem>
-          </a>{" "}
+          </a>
         </DropdownMenuContent>
       </DropdownMenu>
     </header>
