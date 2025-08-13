@@ -1,7 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, CardSim, CreditCardIcon, Smartphone } from "lucide-react";
+import { ArrowLeft, CreditCardIcon, Smartphone } from "lucide-react";
 import React from "react";
 
 export default function Checkout() {

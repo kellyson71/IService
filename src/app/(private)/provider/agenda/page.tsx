@@ -1,6 +1,6 @@
 "use client";
 import { Separator } from "@/components/ui/separator";
-import { Check, CheckCircle, CircleDollarSign, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import React, { useState } from "react";
 import Header from "@/components/molecules/header";
 import { Button } from "@/components/ui/button";
@@ -97,7 +97,10 @@ export default function Agenda() {
           <Separator className="mb-8" />
           <div className="flex flex-row gap-4 max-sm:flex-col">
             {upcoming.map((item) => (
-              <Card className="flex-1 relative flex gap-4 items-center justify-between bg-card border-1 rounded-lg p-4">
+              <Card
+                key={item.client}
+                className="flex-1 relative flex gap-4 items-center justify-between bg-card border-1 rounded-lg p-4"
+              >
                 <div className="absolute -top-4">
                   <Badge variant="outline" className="bg-accent">
                     {" "}
@@ -120,7 +123,9 @@ export default function Agenda() {
                       </p>
                       <div className="flex gap-2">
                         {item.services.map((e) => (
-                          <Badge variant="outline">{e}</Badge>
+                          <Badge key={e} variant="outline">
+                            {e}
+                          </Badge>
                         ))}
                       </div>
                     </div>
@@ -170,7 +175,10 @@ export default function Agenda() {
           <Separator className="mb-8" />
           <div className="flex flex-col gap-4">
             {services.map((item) => (
-              <Card className="flex-1 relative flex gap-4 items-center justify-between bg-card border-1 rounded-lg p-4">
+              <Card
+                key={item.client + 10}
+                className="flex-1 relative flex gap-4 items-center justify-between bg-card border-1 rounded-lg p-4"
+              >
                 <div className="absolute -top-3 flex gap-4 items-center">
                   <Badge variant="outline" className="bg-accent">
                     {" "}
@@ -207,7 +215,9 @@ export default function Agenda() {
                       </p>
                       <div className="flex gap-2">
                         {item.services.map((e) => (
-                          <Badge variant="outline">{e}</Badge>
+                          <Badge key={e} variant="outline">
+                            {e}
+                          </Badge>
                         ))}
                       </div>
                     </div>

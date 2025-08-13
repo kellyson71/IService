@@ -2,27 +2,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
-import { Textarea } from "@/components/ui/textarea";
 import {
   ArrowLeft,
   Camera,
-  Clock,
   CreditCard,
-  DollarSign,
-  FileText,
-  MapPin,
-  Plus,
   Save,
-  ScrollText,
   Shield,
-  Star,
-  Trash,
-  Trash2,
   User,
 } from "lucide-react";
 import React from "react";
