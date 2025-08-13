@@ -1,6 +1,6 @@
 import { CheckCircle, Clock, Inbox, Search, User } from "lucide-react";
 import React from "react";
-import { getSupabaseServerClient } from "@/utils/supabase/server";
+import { getSupabaseServerClient } from "../../utils/supabase/server";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
