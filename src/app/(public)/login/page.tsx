@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Briefcase, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -28,30 +27,16 @@ export default function Login() {
         setError(json.error || "Falha no login");
         return;
       }
-      router.push("/home");
+      const role: "client" | "provider" | undefined = json?.profile?.role;
+      if (role === "client") {
+        router.push("/dashboard/client");
+      } else if (role === "provider") {
+        router.push("/dashboard/provider");
+      } else {
+        router.push("/home");
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro desconhecido");
-    } finally {
-      setLoading(false);
-    }
-  }
-  async function handleMock(role: 'client' | 'provider') {
-    setError(null);
-    setLoading(true);
-    try {
-      const res = await fetch('/api/auth/mock-login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ role }),
-      });
-      const json = await res.json();
-      if (!res.ok || !json.ok) {
-        setError(json.error || 'Falha no login mock');
-        return;
-      }
-      router.push('/home');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Erro desconhecido');
     } finally {
       setLoading(false);
     }
@@ -109,18 +94,16 @@ export default function Login() {
             <div className="flex flex-1 flex-row gap-2 items-center justify-between">
               <Button
                 type="button"
-                onClick={() => handleMock('client')}
+                onClick={() => router.push('/register/client')}
                 className="flex-1 p-2 py-6 bg-background border-1 border-indigo-600 hover:bg-indigo-600 rounded-2xl text-indigo-600 hover:text-background hover:cursor-pointer"
               >
-                <User />
                 Cliente
               </Button>
               <Button
                 type="button"
-                onClick={() => handleMock('provider')}
+                onClick={() => router.push('/register/provider')}
                 className="flex-1 p-2 py-6 bg-background border-1 border-pink-600 rounded-2xl text-pink-600 hover:bg-pink-600 hover:text-background hover:cursor-pointer"
               >
-                <Briefcase />
                 Provedor
               </Button>
             </div>
