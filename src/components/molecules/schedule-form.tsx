@@ -43,7 +43,7 @@ export default function ScheduleForm() {
           className="radius-md h-10 w-"
         />
       </div>
-      <div className="flex gap-4 w-full">
+      <div className="flex gap-1 w-full">
         <div className="flex flex-col gap-3 w-full">
           <Label htmlFor="date-picker" className="px-1">
             Data
@@ -122,13 +122,16 @@ export default function ScheduleForm() {
         </ToggleGroupItem>
       </ToggleGroup>
       <Separator className="my-4" />
-      <Button
-        variant="purple"
-        className="flex justify-between flex-1 text-center hover:scale-105"
-      >
-        Agendar
-        <span>R$ 500,00</span>
-      </Button>
+      <a href="/checkout">
+        <Button
+          variant="purple"
+          type="button"
+          className="flex justify-between flex-1 text-center hover:scale-105"
+        >
+          Agendar
+          <span>R$ 500,00</span>
+        </Button>
+      </a>
     </form>
   );
 }
