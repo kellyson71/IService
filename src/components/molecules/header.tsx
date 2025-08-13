@@ -92,7 +92,7 @@ export default async function Header() {
           </a>
           <a href="/provider/agenda">
             <DropdownMenuItem>Agendamentos</DropdownMenuItem>
-          </a>{" "}
+          </a>
         </DropdownMenuContent>
       </DropdownMenu>
     </header>
